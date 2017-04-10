@@ -53,7 +53,17 @@ $(document).ready(function(){
 			$(".load").hide();
 			$("."+$('.filter-input').val().toLowerCase()).show();
 			$('.back').show();
+			$('.filter-input').val('')
 		})
+		$('.filter-input').keypress(function(e) {
+		  if(e.which == 13) {
+		  	$(".item").hide();
+				$(".load").hide();
+				$("."+$('.filter-input').val().toLowerCase()).show();
+				$('.back').show();
+				$('.filter-input').val('')
+		  }
+		});
 
 		//exit filter
 		$('.back').on('click', function(){
